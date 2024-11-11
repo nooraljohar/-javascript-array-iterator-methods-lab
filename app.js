@@ -87,3 +87,54 @@ const inventors = [
     { text: 'Ramen is my fav food ever', id: 123523 },
     { text: 'Nice Nice Nice!', id: 542328 },
   ];
+
+  //Exercise 1: Array.prototype.filter()
+
+  let veryOldInventors = inventors.filter((inventor) => {
+    return inventor.year > 1500 && inventor.year <1599 
+  })
+
+ //Exercise 2: Array.prototype.map()
+ let inventorNames = inventors.map((inventor)=> {
+    return `first: ${inventor.first}, last: ${inventor.last}`
+ })
+
+//Exercise 3: Array.prototype.sort()
+let sortedByBirthYear = inventors.sort((a,b) => 
+    a.year - b.year 
+)
+
+//Exercise 4: Array.prototype.find()
+
+let inventorNamedAda = inventors.find((inventor)=> {
+    return inventor.first === 'Ada' ;
+})
+
+
+//Exercise 5: Array.prototype.map()
+let firstLast = people.map((person) => {
+    const [lastName, firstName] = person.split(', ');
+    return `${firstName} ${lastName}`;
+});
+
+//Exercise 6: Array.prototype.some()
+
+let isAdultPresent = devs.some((dev)=> {
+    return dev.year < 2007 ;
+})
+
+//Exercise 7: Array.prototype.every()
+let isEveryone19OrOlder = devs.every((dev) => {
+    return dev.year < 2008;
+})
+
+//Exercise 8: Array.prototype.find()
+let commentById = comments.find((comment) => {
+    return comment.id === 823423;
+
+})
+
+//Exercise 9: Array.prototype.findIndex()
+let idx = comments.findIndex((comment) => {
+    return comment.id === 123523;
+})
